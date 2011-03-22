@@ -1,0 +1,10 @@
+Changes
+MANIFEST
+Makefile.PL
+README
+lib/Padre/Plugin/RunPerlExternal.pm
+lib/POD2/DE/Padre/Plugin/RunPerlExternal.pod
+t/00-load.t
+t/manifest.t
+t/pod-coverage.t
+t/pod.t
