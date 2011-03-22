@@ -6,7 +6,7 @@ WriteMakefile(
     NAME                => 'Padre::Plugin::RunPerlExternal',
     AUTHOR              => q{Matthias Ries <matthias@coffein-shock.de>},
     VERSION_FROM        => 'lib/Padre/Plugin/RunPerlExternal.pm',
-    ABSTRACT_FROM       => 'lib/Padre/Plugin/RunPerlExternal.pm',
+    ABSTRACT            => 'lib/Padre/Plugin/RunPerlExternal.pm',
     ($ExtUtils::MakeMaker::VERSION >= 6.3002
       ? ('LICENSE'=> 'perl')
       : ()),
