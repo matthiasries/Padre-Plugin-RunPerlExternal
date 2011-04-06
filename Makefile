@@ -59,11 +59,11 @@ DIRFILESEP = /
 DFSEP = $(DIRFILESEP)
 NAME = Padre::Plugin::RunPerlExternal
 NAME_SYM = Padre_Plugin_RunPerlExternal
-VERSION = 0.51
+VERSION = 0.52
 VERSION_MACRO = VERSION
-VERSION_SYM = 0_51
+VERSION_SYM = 0_52
 DEFINE_VERSION = -D$(VERSION_MACRO)=\"$(VERSION)\"
-XS_VERSION = 0.51
+XS_VERSION = 0.52
 XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
 INST_ARCHLIB = blib/arch
@@ -164,8 +164,7 @@ O_FILES  =
 H_FILES  = 
 MAN1PODS = 
 MAN3PODS = lib/POD2/DE/Padre/Plugin/RunPerlExternal.pod \
-	lib/Padre/Plugin/RunPerlExternal.pm \
-	lib/Padre/Plugin/RunPerlExternal.pod
+	lib/Padre/Plugin/RunPerlExternal.pm
 
 # Where is the Config information that we are using/depend on
 CONFIGDEP = $(PERL_ARCHLIB)$(DFSEP)Config.pm $(PERL_INC)$(DFSEP)config.h
@@ -188,13 +187,10 @@ PERL_ARCHIVE_AFTER =
 
 
 TO_INST_PM = lib/POD2/DE/Padre/Plugin/RunPerlExternal.pod \
-	lib/Padre/Plugin/RunPerlExternal.pm \
-	lib/Padre/Plugin/RunPerlExternal.pod
+	lib/Padre/Plugin/RunPerlExternal.pm
 
 PM_TO_BLIB = lib/POD2/DE/Padre/Plugin/RunPerlExternal.pod \
 	blib/lib/POD2/DE/Padre/Plugin/RunPerlExternal.pod \
-	lib/Padre/Plugin/RunPerlExternal.pod \
-	blib/lib/Padre/Plugin/RunPerlExternal.pod \
 	lib/Padre/Plugin/RunPerlExternal.pm \
 	blib/lib/Padre/Plugin/RunPerlExternal.pm
 
@@ -265,7 +261,7 @@ RCS_LABEL = rcs -Nv$(VERSION_SYM): -q
 DIST_CP = best
 DIST_DEFAULT = tardist
 DISTNAME = Padre-Plugin-RunPerlExternal
-DISTVNAME = Padre-Plugin-RunPerlExternal-0.51
+DISTVNAME = Padre-Plugin-RunPerlExternal-0.52
 
 
 # --- MakeMaker macro section:
@@ -419,11 +415,9 @@ POD2MAN = $(POD2MAN_EXE)
 
 manifypods : pure_all  \
 	lib/POD2/DE/Padre/Plugin/RunPerlExternal.pod \
-	lib/Padre/Plugin/RunPerlExternal.pod \
 	lib/Padre/Plugin/RunPerlExternal.pm
 	$(NOECHO) $(POD2MAN) --section=3 --perm_rw=$(PERM_RW) \
 	  lib/POD2/DE/Padre/Plugin/RunPerlExternal.pod $(INST_MAN3DIR)/POD2::DE::Padre::Plugin::RunPerlExternal.$(MAN3EXT) \
-	  lib/Padre/Plugin/RunPerlExternal.pod $(INST_MAN3DIR)/Padre::Plugin::RunPerlExternal.$(MAN3EXT) \
 	  lib/Padre/Plugin/RunPerlExternal.pm $(INST_MAN3DIR)/Padre::Plugin::RunPerlExternal.$(MAN3EXT) 
 
 
@@ -490,7 +484,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) Generating META.yml
 	$(NOECHO) $(ECHO) '--- #YAML:1.0' > META_new.yml
 	$(NOECHO) $(ECHO) 'name:               Padre-Plugin-RunPerlExternal' >> META_new.yml
-	$(NOECHO) $(ECHO) 'version:            0.51' >> META_new.yml
+	$(NOECHO) $(ECHO) 'version:            0.52' >> META_new.yml
 	$(NOECHO) $(ECHO) 'abstract:           Runs perl-document in external window. No need for config-switching' >> META_new.yml
 	$(NOECHO) $(ECHO) 'author:' >> META_new.yml
 	$(NOECHO) $(ECHO) '    - Matthias Ries <riesm@cpan.org>' >> META_new.yml
@@ -800,7 +794,7 @@ testdb_static :: testdb_dynamic
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd :
-	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="0.51">' > $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="0.52">' > $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <ABSTRACT>Runs perl-document in external window. No need for config-switching</ABSTRACT>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <AUTHOR>Matthias Ries &lt;riesm@cpan.org&gt;</AUTHOR>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> $(DISTNAME).ppd
@@ -816,7 +810,6 @@ ppd :
 pm_to_blib : $(FIRST_MAKEFILE) $(TO_INST_PM)
 	$(NOECHO) $(ABSPERLRUN) -MExtUtils::Install -e 'pm_to_blib({@ARGV}, '\''$(INST_LIB)/auto'\'', q[$(PM_FILTER)], '\''$(PERM_DIR)'\'')' -- \
 	  lib/POD2/DE/Padre/Plugin/RunPerlExternal.pod blib/lib/POD2/DE/Padre/Plugin/RunPerlExternal.pod \
-	  lib/Padre/Plugin/RunPerlExternal.pod blib/lib/Padre/Plugin/RunPerlExternal.pod \
 	  lib/Padre/Plugin/RunPerlExternal.pm blib/lib/Padre/Plugin/RunPerlExternal.pm 
 	$(NOECHO) $(TOUCH) pm_to_blib
 

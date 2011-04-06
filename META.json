@@ -32,6 +32,11 @@
       },
       "runtime" : {
          "requires" : {
+            "Padre" : "0.66",
+	    "Padre::Current" : 0,
+	    "Padre::Constant" : 0,
+	    "Padre::Plugin" : 0,
+	    "Padre::Wx" : 0,
             "Test::More" : 0
          }
       }

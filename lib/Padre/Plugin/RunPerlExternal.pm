@@ -8,7 +8,7 @@ use Padre::Constant ();
 use Padre::Plugin   ();
 use Padre::Wx       ();
 
-our $VERSION = '0.52';
+our $VERSION = '0.54';
 our @ISA     = 'Padre::Plugin';
 
 #description: used by padre for compat. check
@@ -31,7 +31,7 @@ sub plugin_name {
 sub menu_plugins_simple {
 	my $self = shift;
 	return $self->plugin_name => [
-		'Run Perl in external Window' => sub { $self->in_term },
+		"Run Perl in external Window\tF6" => sub { $self->in_term },
 	];
 }
 
